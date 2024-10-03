@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WallZilla</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>WallZilla</h1>
+      </div>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search wallpapers..."
+        onkeyup="filterWallpapers()"
+      />
+    </header>
+
+    <section class="wallpaper-gallery" id="wallpaperGallery">
+      <!-- Wallpaper cards-->
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <span class="close" onclick="closeModal()" aria-label="Close modal"
+        >&times;</span
+      >
+      <img class="modal-content" id="modalImg" alt="" />
+    </div>
+
+    <footer>
+      <p id="footer-text"></p>
+    </footer>
+
+    <script src="/assets/script/script.js"></script>
+  </body>
+</html>

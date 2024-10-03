@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primar-color : #040D12;
+    --primar-body-color : #183D3D;
+    --text-color : #93B1A6;
+    --logo:#5C8374;
+    --hover-color:#F8EDFF;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primar-body-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+header {
+    width: 100vw;
+    padding: 10px 20px;
+    background-color:var(--primar-color);
+    color: var(--logo);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo:hover{
+    cursor: pointer;
+}
+
+
+#searchInput {
+    padding: 10px;
+    width: 60%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: width 0.4s ease, border-color 0.3s ease;
+}
+
+/* Wallpaper gallery styles */
+.wallpaper-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.wallpaper-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: 0.3s ease-in-out ;
+    height: 200px; 
+}
+
+.wallpaper-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.wallpaper-card img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.wallpaper-card:hover img {
+    transform: scale(1.05);
+}
+
+.download-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: var(--primar-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: var(--hover-color);
+    color: var(--primar-color);
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeInModal 0.3s forwards;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    animation: scaleIn 0.3s forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px; 
+    right: 20px; 
+    color: var(--hover-color);
+    font-size: 30px; 
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #f10a0a; 
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--text-color);
+    color: #fff;
+    margin-top: 20px;
+}
+
+.heart {
+    font-size: 1.5rem;
+    color: red; 
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .close{
+            top: 155px;
+
+    }
+    #searchInput {
+        width: 50%; 
+        margin-top: 10px;
+    }
+}
